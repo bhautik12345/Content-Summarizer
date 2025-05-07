@@ -26,4 +26,12 @@ This is a Streamlit-based web application that summarizes content from YouTube v
    git clone https://github.com/bhautik12345/Content-Summarizer.git
    cd Content-Summarizer
    ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the app:
+   ```bash
+   streamlit run app.py
+   ```
 
