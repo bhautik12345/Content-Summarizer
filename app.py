@@ -23,7 +23,7 @@ st.set_page_config(
 st.title('🦜 LangChain: Summarize Text from YouTube or Website')
 st.subheader('🔗 Enter a URL to get a concise summary and a quiz!')
 
-groq_api_key = st.secrets('GROQ_API_KEY')
+groq_api_key = st.secrets['GROQ_API_KEY']
 
 # URL input
 generic_url = st.text_input('🔗 Paste YouTube or Website URL here')
