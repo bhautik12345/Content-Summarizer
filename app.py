@@ -30,9 +30,9 @@ generic_url = st.text_input('🔗 Paste YouTube or Website URL here')
 
 # Map Prompt Template
 chunk_prompt = '''
-Please summarize the following speech clearly and concisely:
+Please summarize the following Content clearly and concisely:
 ---
-Speech: "{text}"
+Content: "{text}"
 ---
 Summary:
 '''
@@ -48,7 +48,7 @@ Provide a final structured summary of the entire content with the following:
 2. Provide a numbered list of key points from the content.
 3. Generate at least 5 quiz questions with their answers based on the content.
 ---
-Speech: "{text}"
+Content: "{text}"
 '''
 final_prompt_template = PromptTemplate(
     input_variables=['text'],
