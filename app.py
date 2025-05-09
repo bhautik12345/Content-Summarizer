@@ -8,6 +8,7 @@ from langchain.chains.summarize import load_summarize_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 
 load_dotenv()
@@ -23,7 +24,9 @@ st.set_page_config(
 st.title('🦜 LangChain: Summarize Text from YouTube or Website')
 st.subheader('🔗 Enter a URL to get a concise summary and a quiz!')
 
-groq_api_key = st.secrets['GROQ_API_KEY']
+# groq_api_key = st.secrets['GROQ_API_KEY']
+os.environ['GOOGLE_API_KEY'] = st.secrets['GEMINI_API_KEY']
+google_api_key = st.secrets['GEMINI_API_KEY']
 
 # URL input
 generic_url = st.text_input('🔗 Paste YouTube or Website URL here')
@@ -85,10 +88,11 @@ if st.button('🚀 Summarize Content'):
                     chunk_overlap=100
                 ).split_documents(docs)
 
-                llm = ChatGroq(
-                    model='meta-llama/llama-4-scout-17b-16e-instruct',
-                    api_key=groq_api_key
-                )
+                # llm = ChatGroq(
+                #     model='meta-llama/llama-4-scout-17b-16e-instruct',
+                #     api_key=groq_api_key
+                # )
+                llm = ChatGoogleGenerativeAI(model='gemini-2.0-flash')
 
                 chain = load_summarize_chain(
                     llm=llm,
