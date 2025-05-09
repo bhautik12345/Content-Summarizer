@@ -2,6 +2,7 @@ langchain
 python-dotenv
 ipykernel
 langchain-community
+langchain-google-genai
 langchain-text-splitters
 sentence_transformers
 langchain_huggingface
