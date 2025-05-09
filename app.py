@@ -60,8 +60,8 @@ final_prompt_template = PromptTemplate(
 
 # Button click action
 if st.button('🚀 Summarize Content'):
-    if not groq_api_key.strip() or not generic_url.strip():
-        st.error('❌ Please enter both the Groq API key and a valid URL.')
+    if not google_api_key.strip() or not generic_url.strip():
+        st.error('❌ Please enter both the Google API key and a valid URL.')
     elif not validators.url(generic_url):
         st.error('⚠️ Please enter a valid URL (YouTube or any website).')
     else:
